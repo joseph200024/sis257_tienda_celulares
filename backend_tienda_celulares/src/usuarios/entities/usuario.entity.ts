@@ -1,17 +1,6 @@
 import * as bcrypt from 'bcrypt';
 import { BeforeInsert, BeforeUpdate } from 'typeorm';
 export class Usuario {
-  
-
-
-
-
-
-
-  
-  
-  
-  
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
