@@ -30,7 +30,7 @@ Clientes(id, nombres, apellidos, telefono, fecha_registro)
 
 Productos (id, nombre, descripcion, marca, precio, stock)
 
-Venta(id, fecha_venta, monto_total, id_usuario, id_cliente)
+Venta(id, fecha_venta, monto_total, id_empleado, id_cliente)
 
 Detalle_Venta(id, cantidad, precio_unitario, precio_total, id_producto, id_venta)
 ```
