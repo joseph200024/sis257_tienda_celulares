@@ -1,14 +1,15 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductosModule } from './productos/productos.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuariosModule } from './usuarios/usuarios.module';
-import { ClientesModule } from './clientes/clientes.module';
-import { EmpleadosModule } from './empleados/empleados.module';
-import { VentasModule } from './ventas/ventas.module';
-import { DetalleVentasModule } from './detalle_ventas/detalle_ventas.module';
+import { ProveedoresModule } from './proveedores/proveedores.module';
+import { AuthModule } from './auth/auth.module';
+import { CategoriasModule } from './categorias/categorias.module';
+import { CelularesModule } from './celulares/celulares.module';
+import { ColoresModule } from './colores/colores.module';
+import { ComprasModule } from './compras/compras.module';
 
 @Module({
   imports: [
@@ -24,12 +25,13 @@ import { DetalleVentasModule } from './detalle_ventas/detalle_ventas.module';
       synchronize: true,
       autoLoadEntities: true,
     }),
-    ProductosModule,
     UsuariosModule,
-    ClientesModule,
-    EmpleadosModule,
-    VentasModule,
-    DetalleVentasModule,
+    ProveedoresModule,
+    AuthModule,
+    CategoriasModule,
+    CelularesModule,
+    ColoresModule,
+    ComprasModule,
   ],
   controllers: [AppController],
   providers: [AppService],

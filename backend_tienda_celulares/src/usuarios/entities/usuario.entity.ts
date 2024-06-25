@@ -1,6 +1,17 @@
+import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { BeforeInsert, BeforeUpdate } from 'typeorm';
+
+@Entity('usuarios')
 export class Usuario {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column('varchar', { length: 50, nullable: false })
+  usuario: string;
+
+  @Column('varchar', { length: 100, nullable: false })
+  clave: string;
+
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
